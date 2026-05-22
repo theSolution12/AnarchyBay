@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+:root {
+  --pink-50: #fdf2f8;
+  --pink-100: #fce7f3;
+  --pink-200: #fbcfe8;
+  --pink-300: #f9a8d4;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  
+  --yellow-400: #facc15;
+  --yellow-500: #eab308;
+  
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --cream: #ffffff;
+  --mint: #a7f3d0;
+  --teal: #2dd4bf;
+  --orange: #fb923c;
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --purple: #a855f7;
+  
+  --background: var(--white);
+  --foreground: var(--black);
+  --primary: var(--black);
+  --accent: var(--pink-500);
+  --card: var(--white);
+  --border: var(--black);
+  
+  --shadow-brutal: 4px 4px 0px var(--black);
+  --shadow-brutal-lg: 6px 6px 0px var(--black);
+  --shadow-brutal-xl: 8px 8px 0px var(--black);
+}
+
+* {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.neo-brutal {
+  border: 3px solid var(--black);
+  box-shadow: var(--shadow-brutal);
+  transition: all 0.15s ease;
+  background: var(--white);
+}
+
+.neo-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-lg);
+}
+
+.neo-brutal:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--black);
+}
+
+.neo-brutal-static {
+  border: 3px solid var(--black);
+  box-shadow: var(--shadow-brutal);
+  background: var(--white);
+}
+
+.neo-card {
+  background: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: var(--shadow-brutal);
+}
+
+.neo-btn {
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  border: 3px solid var(--black);
+  box-shadow: var(--shadow-brutal);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-lg);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--black);
+}
+
+.neo-btn-primary {
+  background: var(--yellow-400);
+  color: var(--black);
+}
+
+.neo-btn-secondary {
+  background: var(--white);
+  color: var(--black);
+}
+
+.neo-btn-accent {
+  background: var(--pink-500);
+  color: var(--white);
+}
+
+.neo-input {
+  padding: 14px 18px;
+  border: 3px solid var(--black);
+  background: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.neo-input:focus {
+  outline: none;
+  box-shadow: var(--shadow-brutal);
+}
+
+.neo-input::placeholder {
+  color: #9ca3af;
+}
+
+.neo-tag {
+  display: inline-flex;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid var(--black);
+  background: var(--mint);
+}
+
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 2px solid var(--black);
+  background: var(--yellow-400);
+}
+
+.border-3 {
+  border-width: 3px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spotlight-in {
+  from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes liquid-menu {
+  0% { 
+    opacity: 0; 
+    transform: scaleY(0.3) translateY(-20px); 
+    transform-origin: top;
+    border-radius: 24px;
+  }
+  50% { 
+    transform: scaleY(1.02) translateY(2px); 
+    border-radius: 8px;
+  }
+  100% { 
+    opacity: 1; 
+    transform: scaleY(1) translateY(0); 
+    transform-origin: top;
+    border-radius: 0;
+  }
+}
+
+@keyframes liquid-dropdown {
+  0% { 
+    opacity: 0; 
+    transform: scaleY(0.4) translateY(-15px); 
+    transform-origin: top;
+  }
+  60% { 
+    transform: scaleY(1.05) translateY(3px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scaleY(1) translateY(0); 
+  }
+}
+
+@keyframes liquid-spotlight {
+  0% { 
+    opacity: 0;
+    transform: scale(0.85) translateY(-30px);
+    filter: blur(10px);
+  }
+  50% {
+    transform: scale(1.02) translateY(5px);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes search-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-bounce-subtle { animation: bounce-subtle 2s ease-in-out infinite; }
+.animate-slide-up { animation: slide-up 0.5s ease-out forwards; }
+.animate-spotlight-in { animation: spotlight-in 0.2s ease-out; }
+.animate-fade-in { animation: fade-in 0.15s ease-out; }
+
+.animate-liquid-menu {
+  animation: liquid-menu 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-liquid-dropdown {
+  animation: liquid-dropdown 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-liquid-spotlight {
+  animation: liquid-spotlight 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-backdrop-in {
+  animation: backdrop-in 0.3s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+
+.animate-search-pulse {
+  animation: search-pulse 2s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+  border-left: 3px solid var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--yellow-400);
+  border: 3px solid var(--black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-500);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 3px solid var(--black);
+}
+
+.excerpt {
+  font-family: 'Spectral', serif;
+  background: white;
+}
+
+.excerpt p:first-of-type::first-letter {
+  font-family: 'Fleur De Leah', cursive;
+}
+
+.flower {
+  shape-outside: url("https://raw.githubusercontent.com/melipi/img-repo/main/flower-silhouette.png");
+  shape-margin: 2rem;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 0.25rem solid #000;
+}
+
+::selection {
+  background: black;
+  color: white;
+}
+
+/* Stairs Overlay Transition */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.stairs-wrap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.stair {
+  height: 100%;
+  width: 20%;
+  background: #000;
+  border-right: 3px solid var(--black);
+}
+
+.stair:last-child {
+  border-right: none;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}

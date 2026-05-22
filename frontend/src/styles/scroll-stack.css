@@ -1,0 +1,9 @@
+@import 'lenis/dist/lenis.css';
+
+.scroll-stack-card {
+  transition: box-shadow 0.3s ease;
+}
+
+.scroll-stack-card:hover {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
